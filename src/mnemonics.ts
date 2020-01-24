@@ -5,10 +5,24 @@
 
 'use strict';
 
+/**
+ * @ignore
+ */
 const crc = require('crc');
+
+/**
+ * @ignore
+ */
 const defaultWordset: string = 'english';
+
+/**
+ * @ignore
+ */
 const GetRandomValues = require('get-random-values');
 
+/**
+ * @ignore
+ */
 const wordSets: any = {
     electrum: {
         prefixLength: 0,
@@ -1130,6 +1144,9 @@ export class Mnemonics {
     }
 }
 
+/**
+ * @ignore
+ */
 function getChecksumIndex(words: string[], prefixLength: number): number {
     let trimmerWords: string = '';
 
@@ -1144,6 +1161,9 @@ function getChecksumIndex(words: string[], prefixLength: number): number {
     return index;
 }
 
+/**
+ * @ignore
+ */
 function encode(str: string, wordsetName?: string): string {
     wordsetName = wordsetName || defaultWordset;
     const wordset = wordSets[wordsetName];
@@ -1165,6 +1185,9 @@ function encode(str: string, wordsetName?: string): string {
     return out.join(' ');
 }
 
+/**
+ * @ignore
+ */
 function swapEndian4byte(str: string): string {
     if (str.length !== 8) {
         throw new Error('Invalid input length: ' + str.length);
@@ -1172,6 +1195,9 @@ function swapEndian4byte(str: string): string {
     return str.slice(6, 8) + str.slice(4, 6) + str.slice(2, 4) + str.slice(0, 2);
 }
 
+/**
+ * @ignore
+ */
 function decode(str: string, wordsetName?: string) {
     wordsetName = wordsetName || defaultWordset;
     const wordset = wordSets[wordsetName];
@@ -1233,6 +1259,9 @@ function decode(str: string, wordsetName?: string) {
     return out;
 }
 
+/**
+ * @ignore
+ */
 function random(bits: number): string {
     if (bits % 32 !== 0) {
         throw new Error('Something weird went wrong: Invalid number of bits - ' + bits);
