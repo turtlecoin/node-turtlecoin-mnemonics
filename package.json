@@ -6,7 +6,7 @@
   "main": "dist/mnemonics.js",
   "scripts": {
     "build": "./node_modules/.bin/tsc",
-    "docs": "./node_modules/.bin/typedoc && touch docs/.nojekyll && echo \"mnemonics.turtlecoin.dev\" > docs/CNAME",
+    "docs": "./node_modules/.bin/typedoc && touch docs/.nojekyll",
     "install": "npm run build",
     "prepublishOnly": "npm test && npm run docs",
     "style": "./node_modules/.bin/tslint -c tslint.json src/mnemonics.ts",
