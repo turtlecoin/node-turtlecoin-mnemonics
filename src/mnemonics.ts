@@ -13,7 +13,7 @@ const crc = require('crc');
 /**
  * @ignore
  */
-const defaultWordset: string = 'english';
+const defaultWordset = 'english';
 
 /**
  * @ignore
@@ -240,8 +240,8 @@ const wordSets: any = {
             'kingdom', 'mention', 'mist', 'moan', 'mumble', 'mutter', 'observe', 'ode',
             'pathetic', 'pattern', 'pie', 'prefer', 'puff', 'rape', 'rare', 'revenge',
             'rude', 'scrape', 'spiral', 'squeeze', 'strain', 'sunset', 'suspend',
-            'sympathy', 'thigh', 'throne', 'total', 'unseen', 'weapon', 'weary',
-        ],
+            'sympathy', 'thigh', 'throne', 'total', 'unseen', 'weapon', 'weary'
+        ]
     },
     english: {
         prefixLength: 3,
@@ -449,8 +449,8 @@ const wordSets: any = {
             'yacht', 'yahoo', 'yanks', 'yard', 'yawning', 'yearbook', 'yellow', 'yesterday',
             'yeti', 'yields', 'yodel', 'yoga', 'younger', 'yoyo', 'zapped', 'zeal',
             'zebra', 'zero', 'zesty', 'zigzags', 'zinger', 'zippers', 'zodiac', 'zombie',
-            'zones', 'zoom',
-        ],
+            'zones', 'zoom'
+        ]
     },
     spanish: {
         prefixLength: 4,
@@ -658,8 +658,8 @@ const wordSets: any = {
             'resina', 'respeto', 'resto', 'resumen', 'retiro', 'retorno', 'retrato', 'reunir',
             'revés', 'revista', 'rey', 'rezar', 'rico', 'riego', 'rienda', 'riesgo',
             'rifa', 'rígido', 'rigor', 'rincón', 'riñón', 'río', 'riqueza', 'risa',
-            'ritmo', 'rito',
-        ],
+            'ritmo', 'rito'
+        ]
     },
     portuguese: {
         prefixLength: 3,
@@ -867,8 +867,8 @@ const wordSets: any = {
             'xaual', 'xavante', 'xaxim', 'xenonio', 'xepa', 'xerox', 'xicara', 'xifopago',
             'xiita', 'xilogravura', 'xinxim', 'xistoso', 'xixi', 'xodo', 'xogum', 'xucro',
             'zabumba', 'zagueiro', 'zambiano', 'zanzar', 'zarpar', 'zebu', 'zefiro', 'zeloso',
-            'zenite', 'zumbi',
-        ],
+            'zenite', 'zumbi'
+        ]
     },
     japanese: {
         prefixLength: 4,
@@ -1076,9 +1076,9 @@ const wordSets: any = {
             'はんてい', 'はんとし', 'はんのう', 'はんぱ', 'はんぶん', 'はんぺん', 'はんぼうき', 'はんめい',
             'はんらん', 'はんろん', 'ひいき', 'ひうん', 'ひえる', 'ひかく', 'ひかり', 'ひかる',
             'ひかん', 'ひくい', 'ひけつ', 'ひこうき', 'ひこく', 'ひさい', 'ひさしぶり', 'ひさん',
-            'びじゅつかん', 'ひしょ',
-        ],
-    },
+            'びじゅつかん', 'ひしょ'
+        ]
+    }
 };
 
 Object.keys(wordSets).forEach((lang) => {
@@ -1105,7 +1105,7 @@ export class Mnemonics {
      * @param wordsetName The mnemonic language
      * @returns The mnemonic phrase
      */
-    public static encode(seed: string, wordsetName?: string): string {
+    public static encode (seed: string, wordsetName?: string): string {
         return encode(seed, wordsetName);
     }
 
@@ -1115,7 +1115,7 @@ export class Mnemonics {
      * @param wordsetName The mnemonic language
      * @returns The wallet seed
      */
-    public static decode(words: string, wordsetName?: string): string {
+    public static decode (words: string, wordsetName?: string): string {
         return decode(words, wordsetName);
     }
 
@@ -1124,14 +1124,14 @@ export class Mnemonics {
      * @param bits The number of random bits to return
      * @returns The random bits in a hexadecimal representation
      */
-    public static random(bits: number): string {
+    public static random (bits: number): string {
         return random(bits);
     }
 
     /**
      * Provides the full list of wordsets available with their words
      */
-    static get words(): any {
+    static get words (): any {
         return wordSets;
     }
 
@@ -1139,7 +1139,7 @@ export class Mnemonics {
      * Provides the list of mnemonic languages supported
      * @returns The mnemonic languages
      */
-    static get languages(): string[] {
+    static get languages (): string[] {
         return Object.keys(wordSets);
     }
 }
@@ -1147,8 +1147,8 @@ export class Mnemonics {
 /**
  * @ignore
  */
-function getChecksumIndex(words: string[], prefixLength: number): number {
-    let trimmerWords: string = '';
+function getChecksumIndex (words: string[], prefixLength: number): number {
+    let trimmerWords = '';
 
     words.forEach((word) => {
         trimmerWords += word.slice(0, prefixLength);
@@ -1164,7 +1164,7 @@ function getChecksumIndex(words: string[], prefixLength: number): number {
 /**
  * @ignore
  */
-function encode(str: string, wordsetName?: string): string {
+function encode (str: string, wordsetName?: string): string {
     wordsetName = wordsetName || defaultWordset;
     const wordset = wordSets[wordsetName];
     let out: string[] = [];
@@ -1188,7 +1188,7 @@ function encode(str: string, wordsetName?: string): string {
 /**
  * @ignore
  */
-function swapEndian4byte(str: string): string {
+function swapEndian4byte (str: string): string {
     if (str.length !== 8) {
         throw new Error('Invalid input length: ' + str.length);
     }
@@ -1198,7 +1198,7 @@ function swapEndian4byte(str: string): string {
 /**
  * @ignore
  */
-function decode(str: string, wordsetName?: string) {
+function decode (str: string, wordsetName?: string) {
     wordsetName = wordsetName || defaultWordset;
     const wordset = wordSets[wordsetName];
     let out = '';
@@ -1208,8 +1208,8 @@ function decode(str: string, wordsetName?: string) {
     if (wlist.length < 12) {
         throw new Error('You have entered too few words, please try again');
     }
-    if ((wordset.prefixLength === 0 && (wlist.length % 3 !== 0))
-        || (wordset.prefixLength > 0 && (wlist.length % 3 === 2))) {
+    if ((wordset.prefixLength === 0 && (wlist.length % 3 !== 0)) ||
+        (wordset.prefixLength > 0 && (wlist.length % 3 === 2))) {
         throw new Error('You\'ve entered too few words, please try again');
     }
     if (wordset.prefixLength > 0 && (wlist.length % 3 === 0)) {
@@ -1262,7 +1262,7 @@ function decode(str: string, wordsetName?: string) {
 /**
  * @ignore
  */
-function random(bits: number): string {
+function random (bits: number): string {
     if (bits % 32 !== 0) {
         throw new Error('Something weird went wrong: Invalid number of bits - ' + bits);
     }
@@ -1270,7 +1270,7 @@ function random(bits: number): string {
 
     let i = 0;
 
-    function arrIsZero(): boolean {
+    function arrIsZero (): boolean {
         for (let j = 0; j < bits / 8; ++j) {
             if (array[j] !== 0) {
                 return false;
