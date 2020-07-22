@@ -1131,7 +1131,7 @@ export class Mnemonics {
     /**
      * Provides the full list of wordsets available with their words
      */
-    static get words (): any {
+    public static get words (): any {
         return wordSets;
     }
 
@@ -1139,8 +1139,27 @@ export class Mnemonics {
      * Provides the list of mnemonic languages supported
      * @returns The mnemonic languages
      */
-    static get languages (): string[] {
+    public static get languages (): string[] {
         return Object.keys(wordSets);
+    }
+
+    /**
+     * Calculats the proper checksum word for the given words
+     * @param words
+     * @param wordsetName
+     */
+    public static calculate_checksum (words: string[], wordsetName?: string): string {
+        wordsetName = wordsetName || defaultWordset;
+
+        if (words.length !== 24) {
+            throw new Error('Invalid word count');
+        }
+
+        const wordset = wordSets[wordsetName];
+
+        const idx = getChecksumIndex(words, wordset.prefixLength);
+
+        return words[idx];
     }
 }
 
