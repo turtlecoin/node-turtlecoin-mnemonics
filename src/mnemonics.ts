@@ -1144,7 +1144,7 @@ export class Mnemonics {
     }
 
     /**
-     * Calculats the proper checksum word for the given words
+     * Calculates the proper checksum word for the given words
      * @param words
      * @param wordsetName
      */
