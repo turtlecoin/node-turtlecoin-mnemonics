@@ -1,5 +1,5 @@
 // Copyright by Undisclosed Author(s) of Unknown Origin
-// Copyright (c) 2018-2020, The TurtleCoin Developers
+// Copyright (c) 2018-2021, The TurtleCoin Developers
 //
 // Please see the included LICENSE file for more information.
 
@@ -759,7 +759,8 @@ const wordSets: any = {
             'ilativo', 'iletrado', 'ilharga', 'ilimitado', 'ilogismo', 'ilustrissimo', 'imaturo', 'imbuzeiro',
             'imerso', 'imitavel', 'imovel', 'imputar', 'imutavel', 'inaveriguavel', 'incutir', 'induzir',
             'inextricavel', 'infusao', 'ingua', 'inhame', 'iniquo', 'injusto', 'inning', 'inoxidavel',
-            'inquisitorial', 'insustentavel', 'intumescimento', 'inutilizavel', 'invulneravel', 'inzoneiro', 'iodo', 'iogurte',
+            'inquisitorial', 'insustentavel', 'intumescimento', 'inutilizavel', 'invulneravel',
+            'inzoneiro', 'iodo', 'iogurte',
             'ioio', 'ionosfera', 'ioruba', 'iota', 'ipsilon', 'irascivel', 'iris', 'irlandes',
             'irmaos', 'iroques', 'irrupcao', 'isca', 'isento', 'islandes', 'isotopo', 'isqueiro',
             'israelita', 'isso', 'isto', 'iterbio', 'itinerario', 'itrio', 'iuane', 'iugoslavo',
@@ -821,7 +822,8 @@ const wordSets: any = {
             'quetzal', 'quixotesco', 'quotizavel', 'rabujice', 'racista', 'radonio', 'rafia', 'ragu',
             'rajado', 'ralo', 'rampeiro', 'ranzinza', 'raptor', 'raquitismo', 'raro', 'rasurar',
             'ratoeira', 'ravioli', 'razoavel', 'reavivar', 'rebuscar', 'recusavel', 'reduzivel', 'reexposicao',
-            'refutavel', 'regurgitar', 'reivindicavel', 'rejuvenescimento', 'relva', 'remuneravel', 'renunciar', 'reorientar',
+            'refutavel', 'regurgitar', 'reivindicavel', 'rejuvenescimento', 'relva', 'remuneravel', 'renunciar',
+            'reorientar',
             'repuxo', 'requisito', 'resumo', 'returno', 'reutilizar', 'revolvido', 'rezonear', 'riacho',
             'ribossomo', 'ricota', 'ridiculo', 'rifle', 'rigoroso', 'rijo', 'rimel', 'rins',
             'rios', 'riqueza', 'riquixa', 'rissole', 'ritualistico', 'rivalizar', 'rixa', 'robusto',
